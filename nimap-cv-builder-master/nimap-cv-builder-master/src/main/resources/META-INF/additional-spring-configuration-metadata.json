@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "secure-file.cv-dir",
+    "type": "java.lang.String",
+    "description": "A description for 'secure-file.cv-dir'"
+  },
+  {
+    "name": "spring.mail.templates.path",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mail.templates.path'"
+  },
+  {
+    "name": "mail.env",
+    "type": "java.lang.String",
+    "description": "A description for 'mail.env'"
+  },
+  {
+    "name": "secure-file1.upload-dir",
+    "type": "java.lang.String",
+    "description": "A description for 'secure-file1.upload-dir'"
+  },
+  {
+    "name": "file.upload-dir",
+    "type": "java.lang.String",
+    "description": "A description for 'file.upload-dir'"
+  },
+  {
+    "name": "file.upload-dir",
+    "type": "java.lang.String",
+    "description": "A description for 'file.upload-dir'"
+  }
+]}

@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style type="text/css">
+html {
+	zoom: 0.75;
+}
+
+.tableHead {
+	width: 20%;
+	height: 40px;
+}
+
+body {
+	font-size: 16px !important;
+	font-family: sans-serif;
+}
+
+td {
+	border: 1px solid black;
+	padding: 7px 0px 7px 15px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.skill-txt {
+	text-decoration: underline;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+</style>
+</head>
+<body>
+	<h1>
+		<p th:text="${experience} + '+ years' + ' | ' + ${name} + ' | ' + ${designation}" />
+	</h1>
+	<br />
+	<br />
+	<br />
+	<b><u>Summary: </u></b>
+	<br>
+	<p th:text="${summary} " />
+   </br>
+	
+	<b> 
+		<p th:text="'Currently Working :' + 'Nimap Infotech  (' + ${DateOfJoining} + ')'" />
+		
+	</b>
+	
+	<div class="container1">
+		<br /> 
+		<p class="skill-txt" th:text="'Professional Qualification:'" />
+		<br /> 
+		<table   style="width: 100% " >
+			<tr>
+				<td><b>Degree/Certification</b></td>
+				<td><b>University/Institute</b></td>
+				<td><b>Year Of Passing</b></td>
+			</tr>
+			<tr>
+			    <td th:text="${HighestQualification}"></td>
+				<td th:text="${university}"></td>
+				<td th:text="${YearOfPassing}"></td>
+			</tr>
+		</table>
+	</div>
+	
+
+	<!-- - -->
+<br/>
+<br/>
+	<p class="skill-txt" th:text="'Technical Skills:'" />
+	<br/>
+	<br />
+	<div class="container">
+		<table id="example" class="table table-bordered" style="width: 100%">
+			<tr>
+				<td>Languages:</td>
+				<td th:text="${languages}"></td>
+			</tr>
+			<tr>
+				<td>Framework:</td>
+				<td th:text="${frameworks}"></td>
+			</tr>
+			<tr>
+				<td>IDE:</td>
+				<td th:text="${ides}"></td>
+			</tr>
+			<tr>
+				<td>Version Control System:</td>
+				<td th:text="${vcs}"></td>
+			</tr>
+			<tr>
+				<td>External Component:</td>
+				<td th:text="${extComp}"></td>
+			</tr>
+			<tr>
+				<td>Web Service:</td>
+				<td th:text="${webServices}"></td>
+			</tr>
+			<tr>
+				<td>Other Skills:</td>
+				<td th:text="${skills}"></td>
+			</tr>
+			<tr>
+				<td>Tool:</td>
+				<td th:text="${tool}"></td>
+			</tr>
+			<tr>
+				<td>Operating Systems:</td>
+				<td th:text="${os}"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="container">
+		<br /> <br />
+		<p class="skill-txt" th:text="'Project Experience:'" />
+		<br /> <br />
+		<div th:each="project : ${projects}">
+			<table class="table table-bordered" style="width: 100%">
+				<tr>
+					<td>Project:</td>
+					<td th:text="${project.getName()}"></td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td th:text="${project.getDescription()}"></td>
+				</tr>
+				<tr>
+					<td>Responsibilities:</td>
+					<td th:text="${project.getResponsibilities()}"></td>
+				</tr>
+				<tr>
+					<td>Team Size:</td>
+					<td th:text="${project.getTeamSize()}"></td>
+				</tr>
+				<tr>
+					<td>Technical Stack:</td>
+					<td th:text="${project.getTechnicalStack()}"></td>
+				</tr>
+
+<!-- 
+                 <tr>
+
+						<td>Project Duration:</td>
+
+						<td th:text="${T(com.app.utils.CalculateExpUtil).getExp(project.projectStartDate, project.projectEndDate)}"></td>
+
+					</tr>
+
+-->
+				<tr>
+					<td>Project Duration:</td>
+					<td th:text="${project.getduration()}"></td>
+				</tr>
+
+ 
+
+			</table>
+			<br /> <br /> <br />
+		</div>
+	</div>
+</body>
+</html>
